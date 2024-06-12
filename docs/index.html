@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victoria Jurado</title>
+    <link rel="icon" href="img/icon.jpg">
+    <style>
+
+        body{
+            font-family:sans-serif;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #393E46;
+            border-bottom: 3px solid rgb(0, 0, 0);
+            z-index: 10;
+        }
+
+        header .logo{
+            position: relative;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 4em;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav:hover{
+            color: rgb(250,210,24);
+        }
+
+        .nav:active{
+            transition: 0s;
+            color: rgb(64, 199, 120)
+        }
+
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header ul li{
+            font-size: 40px;
+            list-style: none;
+        }
+
+        header ul li a{
+            position: relative;
+            
+            margin: 0 35px;
+            text-decoration: none;
+            color: #ffffff;
+            letter-spacing: 2px;
+            font-size: 40px;
+            font-weight: 600;
+            transition: 0.7s;
+        }
+
+        .inicio{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(241, 214, 131, 0.5), rgba(33, 32, 29, 0.5));
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        .center{
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .icon{
+            width: 45%;
+        }
+
+        .bg1{
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .nosotros{
+            border-top: 4px solid black;
+            background-color: #61615f;
+            background-image: url(img/background.PNG);
+            background-size: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family:sans-serif;
+            font-size: 80px;
+            scroll-margin-top: 100px;
+            padding-top: 100px;
+            padding-bottom: 75px;
+        }
+
+        .video_nosotros{
+            width: 400px;
+            height: 700px;
+        }
+
+        .bloque{
+            display: flex;
+            align-items: center;
+            width: 50%;
+        }
+
+        .container{
+            margin-left: 50px;
+            text-align: center;
+        }
+
+        .container h2{
+            color: #ffffff;
+            text-shadow: 4px 4px 10px #000;
+        }
+
+        .container p{
+            font-size: 32px;
+            font-weight: bold;
+            color: #e5e5e5;
+            background: rgb(63, 63, 63);
+            border: 6px solid #000;
+            padding: 8px;
+            border-radius: 12px;
+            text-align: start;
+        }
+
+        .redes img{
+            width: 80px;
+            border-radius: 20px;
+            transition: 0.3s;
+            margin: 5px;
+        }
+
+        .redes img:hover{
+            transform: scale(1.1);
+        }
+
+        .redes img:active{
+            transform: scale(0.9);
+        }
+
+        .servicios {
+            border-top: 4px solid black;
+            background-image: url(img/background.PNG);
+            background-size: 100px;
+            background-color: #8FBC8B;	
+            padding: 50px 20px;
+            text-align: center;
+            scroll-margin-top: 100px;
+        }
+
+        .servicios h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            color: #ddd;
+            background-color: rgb(63, 63, 63);
+            border-radius: 8px;
+        }
+
+        .servicios .contenedor-servicios {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 40px;
+            gap: 30px;
+        }
+
+        .servicios .servicio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #ffffff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .servicios .servicio img {
+            width: 300px;
+            height: 300px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .servicios .servicio p {
+            font-size: 20px;
+            color: #333;
+            margin-top: 10px;
+            padding: 5px;
+        }
+
+        .ubicaciones {
+            border-top: 4px solid black;
+            background-color: #d09c1a;
+            background-image: url(img/background.PNG);
+            background-size: 100px;
+            padding: 50px 20px;
+            text-align: center;
+            scroll-margin-top: 100px;
+        }
+
+        .ubicaciones .contenerdor-ubicaciones {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            gap: 30px;
+        }
+
+        .contenerdor-ubicaciones {
+            border: 4px solid #3a3a3a;
+            background-color: rgba(221, 221, 221, 0.8);
+            padding: 40px;
+            margin: 16px;
+        }
+
+        .Ubicacion-nombre{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .ubicaciones h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #ddd;
+            background-color: rgb(63, 63, 63);
+            border-radius: 8px;
+            letter-spacing: 2px;
+        }
+
+        .ubicaciones img {
+            width: 600px;
+            height: 600px;
+        }
+
+        .ubicaciones .google-maps {
+            width: 65px;
+            height: 65px;
+            transition: 0.3s;
+        }
+
+        .ubicaciones .google-maps:hover{
+            transform: scale(1.4);
+        }
+
+        .contacto {
+            border-top: 4px solid black;
+            background-color: #393E46;
+            color: #fff;
+            padding: 60px 20px 20px;
+            text-align: center;
+        }
+
+        .contacto h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .contacto form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contacto form input,
+        .contacto form textarea {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        .contacto form input[type="submit"] {
+            background-color: #00adb5;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        footer{
+            color: #f0f8ff;
+            font-size: 20px;
+            min-height: 40px;
+            background-color: #393E46;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .header .logo {
+                font-size: 3em;
+            }
+
+            header ul li {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Victoria Jurado</a>
+        <nav>
+            <ul>
+                <li><a class="nav" href="#inicio">Inicio</a></li>
+                <li><a class="nav" href="#nosotros">Nosotros</a></li>
+                <li><a class="nav" href="#servicios">Servicios</a></li>
+                <li><a class="nav" href="#ubicaciones">Ubicaciones</a></li>
+                <li><a class="nav" href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="inicio" id="inicio">
+        <img src="img/prueba.jpg" alt="" class="bg1">
+        <div class="center">
+            <img src="img/logosad.PNG" alt="" class="icon">
+            <div class="redes">
+                <ul>
+                    <a href="https://www.instagram.com/victoriajuradopeluqueria/" target="_blank" rel="noreferrer"><img src="img/instragram.png" alt=""></a>
+                    <a href="https://www.facebook.com/Victoriajuradopeluqueria/" target="_blank" rel="noreferrer"><img src="img/facebook.png" alt=""></a>
+                    <a href="https://wa.me/3133533897?&text=¡Buenas! Me gustaría agendar una cita." target="_blank" rel="noreferrer"><img src="img/whatsapp.png" alt=""></a>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="nosotros" id="nosotros">
+        <div class="bloque">
+            <video src="videos/nosotros.mp4" class="video_nosotros" autoplay muted loop></video>
+            <div class="container">
+                <h2>Nosotros</h2>
+                <p>Somos Victoria Jurado una peluquería de renombre, donde nos dedicamos a ofrecer servicios de belleza y cuidado personal de gran calidad, nuestra fundación surgió en el año 2006 con el fin de proporcionar a nuestros clientes una experiencia única y personalizada. En nuestro equipo contamos con profesionales altamente capacitados y entregados a resaltar la belleza natural y único de cada cliente.</p> 
+            </div>   
+        </div>
+    </section>
+    <section class="servicios" id="servicios">
+        <h2>Servicios</h2>
+        <div class="contenedor-servicios">
+            <div class="servicio">
+                <h3>Cabelllo</h3> 
+                <img src="img/cabello.jpeg" alt="Corte de Cabello">
+                <p>- Peinados y cortes</p>
+                <p>- Cepillado</p>
+                <p>- Planchado</p>
+                <p>- Ondas</p>
+                <p>- Colorimetria</p>
+                <p>- Hidratacion</p>
+                <p>- Alisados</p>
+            </div>
+            <div class="servicio">
+                <h3>Uñas</h3> 
+                <img src="img/uñas.jpeg" alt="Arreglo de uñas">
+                <p>- Uñas semipermanentes</p>
+                <p>- Uñas tradicionales</p>
+                <p>- Uñas en gel</p>
+                <p>- Uñas postizas</p>
+                <p>- Uñas en resina</p>
+                <p>Uñas en poligel</p>
+                <p>- Desintoxicación ionica</p>
+            </div>
+            <div class="servicio">
+                <h3>Maquillaje</h3>
+                <img src="img/maquillaje.jpeg" alt="Maquillaje">               
+                <p>- Maquillaje para boda</p>
+                <p>- Maquillaje para quinceaños</p>
+                <p>Maquillaje artístico</p>
+                <p>- Maquillaje para graduaciones</p>
+                <p>- Maquillaje para Halloween</p>
+                <p>- Maquillaje para cualquier tipo de ocasión</p>
+            </div>
+            <div class="servicio">
+                <h3>Estetica</h3>
+                <img src="img/estetica.jpeg" alt="Estetica">
+                <p>- Masajes con electro choques</p>
+                <p>- Depilación de cejas</p>
+                <p>- Spa y peeling</p>       
+                <p>- Mascarillas</p>   
+                <p>- Limpieza facial</p>  
+                <p>- Pestañas pelo a pelo </p>
+                <p>- Lifting de cejas y pestañas </p>
+            </div>
+        </div>
+    </section>
+    <section class="ubicaciones" id="ubicaciones">
+        <h2>Ubicaciones</h2>
+        <div class="contenerdor-ubicaciones">
+            <img src="img/cede guaimaral.jpeg" alt="cede guaimaral">
+            <div class="ubicacion">
+                <div class="Ubicacion-nombre">
+                    <h3>CEDE GUAIMARAL</h3>
+                    <a href="https://www.google.com/maps/dir//Ceiba+II,+Av.11e+%238an+-+23,+Sobre+la+Avenida+Guaimaral,+Cl.+6+Nte.+%237e-40,+C%C3%BAcuta,+Norte+de+Santander/@7.9080144,-72.5747178,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e6645810077db43:0xc5184e9d53e2393e!2m2!1d-72.4923159!2d7.9080225?entry=ttu" target="_blank" rel="noreferrer"><img src="img/googlemaps.svg" alt="" class="google-maps"></a>
+                </div>
+                <p>Av11E #8an-23 Barrio Guaimaral, Cúcuta, Colombia</p>
+                <p></p>
+            </div>
+        </div>
+        <div class="contenerdor-ubicaciones">
+            <div class="ubicacion">
+                <div class="Ubicacion-nombre">
+                    <h3>CEDE CEIBA 2</h3>
+                    <a href="https://www.google.com/maps/dir//Calzado+Maraldo,+Cl.+6+Nte.+%237E-40,+Barrio+Ceiba+2,+C%C3%BAcuta,+Norte+de+Santander/@7.9040137,-72.4949027,19z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e6645e90b16c515:0xd291e14c342626fe!2m2!1d-72.4949559!2d7.9040765?entry=ttu" target="_blank" rel="noreferrer"><img src="img/googlemaps.svg" alt="" class="google-maps"></a>
+                </div>
+                <p>Calle 6N #7e-40 Ceiba 2, Cúcuta, Colombia</p>
+            </div>
+            <img src="img/cede guaimaral.jpeg" alt="cede guaimaral">
+        </div>
+    </section>
+    <section class="contacto" id="contacto">
+        <h2>Contacto</h2>
+        <form action="mailto:tuemail@example.com" method="post" enctype="text/plain">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+            <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+    <footer>
+        Copyright © 2024 - Victoria Jurado
+    </footer>
+</body>
+</html>
